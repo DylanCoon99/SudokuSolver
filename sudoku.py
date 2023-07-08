@@ -1,3 +1,4 @@
+import math as m
 '''
 Sudoku solver via backtracking
 by Dylan Coon
@@ -39,9 +40,7 @@ def is_safe(grid, row, col, num):
     # determine whether or not a number can go in a particular location
     
     # calculate subgrid_num
-    subgrid_num = 0
-
-
+    subgrid_num = subgrid_map[(m.ceil((row + 1) / 3) , m.ceil((col + 1) / 3))]
     
     # check if row, col, and subgrid is safe
     return not (in_row(grid, row, num) or in_col(grid, col, num) or in_subgrid(grid, subgrid_num, num))
@@ -95,6 +94,10 @@ if __name__=="__main__":
     for i in range(1,N + 1):
         d[str(i)] = 0
     frequency_map = [d for i in range(1,N + 1)]
+
+    subgrid_map = {(1, 1): 1, (1, 2): 2, (1, 3): 3,
+                   (2, 1): 4, (2, 2): 5, (2, 3): 6, 
+                   (3, 1): 7, (3, 2): 8, (3, 3): 9}
 
     # if success print the grid
     if(solve_sudoku(grid)):
