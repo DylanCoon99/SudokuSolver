@@ -1,4 +1,7 @@
 import math as m
+import config
+
+N = 9
 
 '''
 Sudoku solver via backtracking
@@ -102,7 +105,7 @@ def in_subgrid(grid, row, col, num):
     return False
 
 if __name__=="__main__":
-    # Define the size of the grid
+
     N = 9
 
     # creating a 2D array for the grid
