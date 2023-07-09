@@ -85,7 +85,7 @@ def is_safe(grid, row, col, num):
     return not (in_row(grid, row, num) or in_col(grid, col, num) or in_subgrid(grid, row - row % 3, col - col % 3, num))
 
 
-# returns true if num in row, false otherwise
+# returns true if num in row, false otherwise 
 def in_row(grid, row, num):
     current_row = grid[row]
     for e in current_row:
