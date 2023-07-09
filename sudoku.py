@@ -1,4 +1,5 @@
 import math as m
+
 '''
 Sudoku solver via backtracking
 by Dylan Coon
@@ -45,24 +46,14 @@ def solve_sudoku(grid):
             
             # update the grid
             grid[row][col] = i
-            # update the frequency map
-            #update_frequency_map(grid)
 
             if(solve_sudoku(grid)): return True
 
             # did not solve --> backtrack
             grid[row][col] = 0
-            #update_frequency_map(grid)
+            
 
     return False
-
-def update_frequency_map(grid):
-    # updates the frequency map
-    # called after a change to the grid is made
-    for i in range(1,N + 1):
-        pass
-    
-    return None
 
     
 
