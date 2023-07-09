@@ -14,11 +14,6 @@ Backtracking Algoritm -
     
     (4) If no number (1 - 9) leads to a solution --> return false (No solution exists)
     
-    subgrids:
-
-        [1] [2] [3]
-        [4] [5] [6]
-        [7] [8] [9]
 
 '''
 
@@ -28,7 +23,7 @@ def print_grid(grid):
     # prints the sudoku grid
     for i in range(N):
         for j in range(N):
-            print(grid[i][j], end = " ")
+            print(grid[i][j], end = " | ")
         print()
 
 
@@ -38,41 +33,44 @@ def solve_sudoku(grid):
     if t == None: return True
 
     row = t[0]
-    col = t[0]
+    col = t[1]
 
     # for any unassigned (=0) location
         # choose a number 1-9
         # check if that number is safe
         # if not safe 
 
-    for i in range(1, 10):
+    for i in range(1, N + 1):
         if is_safe(grid, row, col, i):
             
             # update the grid
             grid[row][col] = i
             # update the frequency map
-            update_frequency_map(grid)
+            #update_frequency_map(grid)
 
             if(solve_sudoku(grid)): return True
 
             # did not solve --> backtrack
             grid[row][col] = 0
-            update_frequency_map(grid)
+            #update_frequency_map(grid)
 
     return False
 
 def update_frequency_map(grid):
     # updates the frequency map
     # called after a change to the grid is made
+    for i in range(1,N + 1):
+        pass
+    
+    return None
 
-
-    return
+    
 
 
 def find_unassigned(grid):
     # finds the first instance of an unassigned element in the grid
-    for i in range(10):
-        for j in range(10):
+    for i in range(N):
+        for j in range(N):
             if grid[i][j] == 0:
                 return (i, j)
     return None
@@ -81,10 +79,10 @@ def is_safe(grid, row, col, num):
     # determine whether or not a number can go in a particular location
     
     # calculate subgrid_num
-    subgrid_num = subgrid_map[(m.ceil((row + 1) / 3) , m.ceil((col + 1) / 3))]
+    #subgrid_num = subgrid_map[(m.ceil((row + 1) / 3) , m.ceil((col + 1) / 3))]
     
     # check if row, col, and subgrid is safe
-    return not (in_row(grid, row, num) or in_col(grid, col, num) or in_subgrid(grid, subgrid_num, num))
+    return not (in_row(grid, row, num) or in_col(grid, col, num) or in_subgrid(grid, row - row % 3, col - col % 3, num))
 
 
 # returns true if num in row, false otherwise
@@ -105,10 +103,11 @@ def in_col(grid, col, num):
 
 
 # returns true if num in subgrid, false otherwise
-def in_subgrid(grid, subgrid_num, num):
-    # remember: frequency is zero indexed
-    if(frequency_map[subgrid_num - 1][num] == 1):
-        return True
+def in_subgrid(grid, row, col, num):
+    for i in range(N//3):
+        for j in range(N//3):
+            if(grid[i + row][j + col] == num):
+                return True
     return False
 
 if __name__=="__main__":
@@ -138,11 +137,11 @@ if __name__=="__main__":
 
     # generate the frequency map
     # ...
-    update_frequency_map(grid)
+    #update_frequency_map(grid)
 
-    subgrid_map = {(1, 1): 1, (1, 2): 2, (1, 3): 3,
-                   (2, 1): 4, (2, 2): 5, (2, 3): 6, 
-                   (3, 1): 7, (3, 2): 8, (3, 3): 9}
+    #subgrid_map = {(1, 1): 1, (1, 2): 2, (1, 3): 3,
+                   #(2, 1): 4, (2, 2): 5, (2, 3): 6, 
+                   #(3, 1): 7, (3, 2): 8, (3, 3): 9}
 
     # if success print the grid
     if(solve_sudoku(grid)):
