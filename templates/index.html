@@ -1,5 +1,120 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<title>Sudoku Solver</title>
-	
+	<head>
+		<title>Sudoku Solver</title>
+		<style>
+
+		</style>
+
+	</head>
+	<body>
+		<h1>Sudoku Solver</h1>
+		<p>Input the numbers into the cells and press Solve!</p>
+
+		<table border="1">
+			<tr>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+			</tr>
+			<tr>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+			</tr>
+			<tr>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+			</tr>
+			<tr>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+			</tr>
+			<tr>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+			</tr>
+			<tr>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+			</tr>
+			<tr>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+			</tr>
+			<tr>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+			</tr>
+			<tr>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+				<td> <input type = "text" name="00" style="width: 25px;"/> </td>
+			</tr>
+			
+
+
+		</table>
+
+	</body>
 </html>
