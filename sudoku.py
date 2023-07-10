@@ -111,17 +111,6 @@ if __name__=="__main__":
     # creating a 2D array for the grid
     grid =[[0 for x in range(N)]for y in range(N)]
 
-    '''
-    grid =[[3, 0, 6, 5, 0, 8, 4, 0, 0],
-          [5, 2, 0, 0, 0, 0, 0, 0, 0],
-          [0, 8, 7, 0, 0, 0, 0, 3, 1],
-          [0, 0, 3, 0, 1, 0, 0, 8, 0],
-          [9, 0, 0, 8, 6, 3, 0, 0, 5],
-          [0, 5, 0, 0, 9, 0, 6, 0, 0],
-          [1, 3, 0, 0, 0, 0, 2, 5, 0],
-          [0, 0, 0, 0, 0, 0, 0, 7, 4],
-          [0, 0, 5, 2, 0, 6, 3, 0, 0]]
-    '''
 
     # make a list of dictionaries that indicate the frequency of each number in each subgrid
     d = dict()
